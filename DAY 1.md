@@ -65,11 +65,11 @@ $ su                              #switch users through command line
   8. .NET ~> ironpython
   9. JAVA ~> Jython
   
-### To install Python 3.6 in rhel 7.5 server~:
+### To install Python 3.6 in rhel 7.5 server~ :
   1.move to etc directory (using cd command)
   2.move to yum.repos.d/ directory
-  3.create a new repo ~> gedit adhoc.repo
-  4. write~:
+  3.create a new repo ~ > gedit adhoc.repo
+  4. write~ :
     [ad]                                              #[]these brackets can enclose anything, you can write Pykid instead as well.
     baseurl=http://13.234.66.67/summer19/python3      # online repository created by adhoc networks
     gpgcheck=0
@@ -80,23 +80,23 @@ $ su                              #switch users through command line
   
 ## Notes:
   1.Calendar used by linux is called Georgian andd other available is Julean
-  2.CNCF ~: A great open source Community
+  2.CNCF ~ : A great open source Community
   3. Python is an interpreted language.
-  4.Python provides reusability of memory ~> (Stores the value and not the variable)
+  4.Python provides reusability of memory ~ > (Stores the value and not the variable)
   5. Each website we run on browser, temporarily stores all its information on local pc RAM
   6. (75~80) % of the data in the world is stored in string format.
   7. ML and  AI both uses int/float values
   
-### Data-Types~:
+### Data-Types~ :
   1.Immutable
       * Python is strictly binded
       * examples ( int,float,str,byte,tuple)
   2.Mutable
       *examples (list,set,dictionary)
       
-## TASK OF THE DAY~:
+## TASK OF THE DAY~ :
   1.show files and folders of different folders other then desktop as default on monitor
-    {open \home\adhoc\.config ~> gedit user-dirs.dirs ~> swap Desktop with Downloads ~> Restart}
+    {open \home\adhoc\.config ~ > gedit user-dirs.dirs ~ > swap Desktop with Downloads ~ > Restart}
   2.First time run Command should always give some error
   3.Study Concept of Recycle Bin -- how it works
     {done, keeps some memory from origin storage and tacks recycle.bin from each dir merging all}
