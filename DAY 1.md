@@ -7,16 +7,16 @@ operating systems @Student's point of view~:
 2.Linux (Open Source)--> its a kernel and not an OS
 3.Mac(Costly)
 
-###To change backend code of Firefox~:
+### To change backend code of Firefox~:
   $ gedit /usr/bin/Firefox -> Change the Code
   
-###Kernal(3 types)~:
+### Kernal(3 types)~:
   1.NT(Windows) ~:  .exe(extension) && Examples ~ (Windows 7,8,10)
   2.LINUX ~: RPM(.rpm) { used for bigdata in redhat }
              Debian(.deb) {used for ML in Ubuntu/mint}
   3.DARWIN~: .dmg && Examples ~ (OSX , SNOWL)
   
-###Few useful Linux Commands~:
+### Few useful Linux Commands~:
 $ mkdir folder-name{1..50}        # {} encloses a range and creates 50 folder in linux
 $ useradd user-name               # Creates a new user
 $ pinky                           # shows information of all available users
@@ -35,7 +35,7 @@ $ mkdir -p folder1/folder2        #both folders will be created together
 $ rm -rf pi*                      #deletes all folders starting with 'pi' , use anything instead of 'pi'
 $ su                              #switch users through command line
 
-###Default Architecture of Windows~:
+### Default Architecture of Windows~:
   Main Account ~: Admin
   Text Editor ~: Notepad
   CMD
@@ -44,7 +44,7 @@ $ su                              #switch users through command line
   OS Storage ~: C Drive
   C:\user\user-name         #Stores info about environment of seperate users(Desktop,Downloads,Videos etc..)
   
-###Default Architecture of Linux(Red Hat)~:
+### Default Architecture of Linux(Red Hat)~:
   Main Account ~: root
   Text editor ~: Gedit
   Terminal
@@ -54,7 +54,7 @@ $ su                              #switch users through command line
   /home                     #Stores folders of different users each with seperate data
   /root  ~> Admin
 
-###Python Integration in Various Technologies~:
+### Python Integration in Various Technologies~:
   1.Pi (meu)python ~> Raspberyy pi
   2.Web-App ~> Django,FLask
   3.All Databases
@@ -65,7 +65,7 @@ $ su                              #switch users through command line
   8. .NET ~> ironpython
   9. JAVA ~> Jython
   
-###To install Python 3.6 in rhel 7.5 server~:
+### To install Python 3.6 in rhel 7.5 server~:
   1.move to etc directory (using cd command)
   2.move to yum.repos.d/ directory
   3.create a new repo ~> gedit adhoc.repo
@@ -78,7 +78,7 @@ $ su                              #switch users through command line
   6.Python installed successully.
   
   
-##Notes:
+## Notes:
   1.Calendar used by linux is called Georgian andd other available is Julean
   2.CNCF ~: A great open source Community
   3. Python is an interpreted language.
@@ -87,14 +87,14 @@ $ su                              #switch users through command line
   6. (75~80) % of the data in the world is stored in string format.
   7. ML and  AI both uses int/float values
   
-###Data-Types~:
+### Data-Types~:
   1.Immutable
       * Python is strictly binded
       * examples ( int,float,str,byte,tuple)
   2.Mutable
       *examples (list,set,dictionary)
       
-##TASK OF THE DAY~:
+## TASK OF THE DAY~:
   1.show files and folders of different folders other then desktop as default on monitor
     {open \home\adhoc\.config ~> gedit user-dirs.dirs ~> swap Desktop with Downloads ~> Restart}
   2.First time run Command should always give some error
