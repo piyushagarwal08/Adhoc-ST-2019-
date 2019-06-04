@@ -7,7 +7,7 @@ operating systems @Student's point of view~:
 3.Mac(Costly)
 
 To change backend code of Firefox~:
-  Computer -> usr -> bin -> Firefox -> Change the Code
+  $ gedit /usr/bin/Firefox -> Change the Code
   
 Kernal(3 types)~:
   1.NT(Windows) ~:  .exe(extension) && Examples ~ (Windows 7,8,10)
@@ -63,6 +63,19 @@ Python Integration in Various Technologies~:
   7.Cloud Computing
   8. .NET ~> ironpython
   9. JAVA ~> Jython
+  
+To install Python 3.6 in rhel 7.5 server~:
+  1.move to etc directory (using cd command)
+  2.move to yum.repos.d/ directory
+  3.create a new repo ~> gedit adhoc.repo
+  4. write~:
+    [ad]                                              #[]these brackets can enclose anything, you can write Pykid instead as well.
+    baseurl=http://13.234.66.67/summer19/python3      # online repository created by adhoc networks
+    gpgcheck=0
+  5. save it and run command
+    yum install python3* -y
+  6.Python installed successully.
+  
   
 Notes:
   1.Calendar used by linux is called Georgian andd other available is Julean
