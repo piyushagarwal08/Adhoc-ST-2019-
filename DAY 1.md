@@ -102,6 +102,8 @@ $ su                              #switch users through command line
     {done, keeps some memory from origin storage and tacks recycle.bin from each dir merging all}
   4. Make different copies of a >5MB file in a directory using only 5MB storage.
   5. why 3 to 13 dates are missing from september 1752 calendar?
+    {To get the calendar back in sync with astronomical events like the vernal equinox or the winter solstice, 
+    a number of days were dropped}
   6. Create 100 folders and delete them in Windows
     { use os module and make python code }
   7. Find the part of RAM where how much byte of data is actually stored or provided to a variable can be checked
