@@ -91,7 +91,9 @@
   
 ## TASK ~ :
   1. Find the date and time of a command from history list as to when it was used
+     { set a variable HISTTIMEFORMAT = "%d/%m/%y %T ", save in .bashrc for permanent }
   2. Change/Update history manually at path(/home/adhoc/.bash_history) and show in terminal without logout/reboot
+     { update history and just close the terminal, on reopening terminal changed history will be seen }
   3. What does 2> mean?
   4. Study/Read about Vulture and Firefly
   5. Read/Explore OSI Model 6
