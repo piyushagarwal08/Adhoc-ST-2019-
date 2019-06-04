@@ -12,9 +12,9 @@ operating systems @Student's point of view~:
   
 ### Kernal(3 types)~:
   1.NT(Windows) ~:  .exe(extension) && Examples ~ (Windows 7,8,10)
-  2.LINUX ~> RPM(.rpm) { used for bigdata in redhat }
+  2.LINUX -> RPM(.rpm) { used for bigdata in redhat }
              Debian(.deb) {used for ML in Ubuntu/mint}
-  3.DARWIN~> .dmg && Examples ~ (OSX , SNOWL)
+  3.DARWIN ~ :.dmg && Examples ~ (OSX , SNOWL)
   
 ### Few useful Linux Commands~:
 $ mkdir folder-name{1..50}        # {} encloses a range and creates 50 folder in linux
