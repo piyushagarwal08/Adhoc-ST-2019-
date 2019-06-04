@@ -1,4 +1,4 @@
-#DAY1
+# DAY1
 initiated with a video over ways of communication , ways to easily communicate and develop a network
 Application/Software -> Interpreter -> Kernel -> RAM,CPU,HardDisk
 (Kernel interacts with the hardwareand checks for space availability.
