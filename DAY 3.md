@@ -82,7 +82,10 @@
   2. How to Write Hello World in a Directory.
     { impossible, as a directory has no storage/memory of itself }
   3. Read about RAM
+    { main memory,temporary, 2 types - SRAM nd DRAM, only data being used is stored }
   4. Find no. of lines in a file
+    { file-handling in python, code saved in repo }
   5. Count no. of lines in a file without saving the file
+    { input in terminal is saved in RAM, done, code i repo }
   6. open a browser-tab using python, find top 5 URLs and store them in list then open those 5 URLs and store top 5 in list         again
   
