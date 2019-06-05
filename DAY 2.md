@@ -97,5 +97,12 @@
   3. What does 2> mean?
   4. Study/Read about Vulture and Firefly
   5. Read/Explore OSI Model 6
+     { https://en.m.wikipedia.org/wiki/Presentation_layer }
   6. Install VLC player on windows using Python
   7. Find various use-cases or tuple
+     { 
+       * Tuples are used to group together related data, such as a person’s name, their age, and their gender.
+       * immutable objects can allow substantial optimization
+       * Tuples can potentially be used as keys
+       * Tuples can be used to store longitude and latitude coordinates
+     }
