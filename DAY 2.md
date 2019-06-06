@@ -95,10 +95,12 @@
   2. Change/Update history manually at path(/home/adhoc/.bash_history) and show in terminal without logout/reboot
      { update history and just close the terminal, on reopening terminal changed history will be seen }
   3. What does 2> mean?
+    { 2> inserts commands output in a file only if the command entered in incorrect else it displays the output and saves            nothing in file }
   4. Study/Read about Vulture and Firefly
   5. Read/Explore OSI Model 6
      { https://en.m.wikipedia.org/wiki/Presentation_layer }
   6. Install VLC player on windows using Python
+    { use pywinauto module, run the code through cmd as administrator }
   7. Find various use-cases or tuple
      { 
        * Tuples are used to group together related data, such as a person’s name, their age, and their gender.
