@@ -79,6 +79,8 @@
   
 ## TASKS
   1. Run application from terminal but it should not run from icon(GUI)
+    { alter the name of code-file in /usr/bin (firefox to firefoxs) and set alias in bashrc for firefox to firefoxs 
+        (alias firefox='firefoxs') }
   2. How to Write Hello World in a Directory.
     { impossible, as a directory has no storage/memory of itself }
   3. Read about RAM
