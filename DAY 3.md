@@ -88,4 +88,5 @@
   5. Count no. of lines in a file without saving the file
     { input in terminal is saved in RAM, done, code i repo }
   6. open a browser-tab using python, find top 5 URLs and store them in list then open those 5 URLs and store top 5 in list         again
+  7. Redirect message from terminal to whatsapp
   
