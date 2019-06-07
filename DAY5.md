@@ -1,6 +1,6 @@
 # Day 5
 
-## Notes 
+## Notes
 * Unix is a type of linux. C language is used to developed most of the part of a kernel.
 * There are 3 popular kernals
   *   NT
@@ -10,8 +10,9 @@
 * Hardware provides command interpreter environment
 * In every OS, whenever a new user is created it is always added in a group by self where the name of group is the name of user itself
 
-## LINUX Commands 
-* $ lpr file-name                  # used to print files 
+## LINUX Commands
+```
+* $ lpr file-name                  # used to print files
 * $ ls -ld                         # shows inode table of directory itself
 * $ ls -ild                        # shows inode number of directory
 * $ ls -l                          # shows inode table of files inside a directory
@@ -20,8 +21,8 @@
 * $ chown owner-name new-name      # change owner name
 * $ useradd -G grp-name user-name  # add a user to existing group
 * $ usermod grp-name user-name  # add a user to existing group if user already exists
-
-## Editors 
+```
+## Editors
 * GUI based ~ Notepad and gedit(graphical editor)
 * CLI based ~ vi , vim , pico , nano
   (vim is an advanced version of vi)
@@ -33,7 +34,7 @@
 ## VIM Tips
 *   Delete a single character use ```x```
 *   Copy multiple lines at one ``yy10p``
-  
+
 ## AWS Tips
 *   You cannot use same pem file in different regions
 *   You can give custom names for your instances
@@ -118,7 +119,7 @@ chmod +t /project
 ```
 chmod g+s /project
 ```
-## Types of Files in LINUX 
+## Types of Files in LINUX
   There are 7 types of files in LINUX OS - :
     1. Regular files (-)
     2. Directory files (d)
@@ -141,7 +142,7 @@ chmod g+s /project
 
 ## Crontab for Job Scheduling
 * Crontab is a program which allows us a background service which will execute something at a partitcular point of time, without any user interaction at that point of time.
-*   To use crontab we use 
+*   To use crontab we use
 ```
 crontab -e
 ```
@@ -149,11 +150,36 @@ crontab -e
 * Crontab date and time format is customizable like if we want to execute something repeatedly multiple times or everytime after a period of time we can use ```*``` for that
 * Need to add the details of Syntax format in vim editor opened by below command
 imp - > */5 * * * *     # it runs a command after every 5 minute
-```
-crontab -e
 
-```
 Syntax :
   minute hour date month day path-of-command where-to-run-command
 
-  
+## GUI Configuration for Ubuntu
+  1. open putty
+  2. Run the following commands ~:
+    ```
+    * sudo apt update &&  sudo apt upgrade
+    * sudo sed -i 's/^PasswordAuthentication no/PasswordAuthentication yes/' /etc/ssh/sshd_config
+    * sudo /etc/init.d/ssh restart
+    * sudo passwd ubuntu  #set a Password
+    * sudo apt install xrdp xfce4 xfce4-goodies tightvncserver
+    * echo xfce4-session> /home/ubuntu/.xsession
+    * sudo cp /home/ubuntu/.xsession /etc/skel
+    * sudo sed -i '0,/-1/s//ask-1/' /etc/xrdp/xrdp.ini
+    * sudo service xrdp restart
+    ```
+  3. sudo reboot or restart putty
+  4. open SSH -> tunnel
+  5. Set
+    * source port = 8888
+    * Destination = Private ip address:3389
+    * Click on added    # local port 8888 goes to 3389
+  6. Start Putty
+  7. $ netstat -antp
+  8. open remote desktop viewer
+  9. connect to IP given at top in command 7
+  10. Yes to error occurs
+  11. Set
+    * username = ubuntu
+    * password - ubuntu
+  12. use default Configuration and its all done
