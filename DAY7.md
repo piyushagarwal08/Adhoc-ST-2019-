@@ -28,12 +28,12 @@
   * IRCTC website works on NGINX
   * By default apache can run html websites
   * /var/www/html is the document root for your Apache
-  * For task goto http://slashreboot.blogspot.common
+  * For task goto http://slashreboot.blogspot.com
   * for google search using python use googlesearch module
   * if need to do both read and write
     1. r+ - > use when file is already created
     2. w+ - > use when file is need to be created
-    
+
 
 ## To Attach a Volume
   * Open Instance in running state
