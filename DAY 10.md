@@ -9,15 +9,25 @@
   * every 3 years a new Redhat OS is launched
   * Backend project of redhat is Fedora that is fedora is developed for 3 years which after completion is produced with name Redhat
   * Fedora is more powerful then Redhat
-  * in a terminal , by default bash is always running 
-
+  * in a terminal , by default bash is always running
+  * Spotify is based on docker- a containerised application
+  * open blog - > slashdevops and search for docker
+  * if a command is run in /etc/profile it will run always when a user is logged in
+  *
 ## LINUX Commands ~
   * $ tac file-name.txt   # reverse the order of reading from bottom to top
   * $ rev file-name.txt   # reverse the words in file reading from top to bottom
   * $ qrencode -s 16x16 -o file-name.png web-site-link # Creates a QR code for the websites, -o shows output to save
   * $ systemctl enable docker # start the docker each time  OS
   * $ systemctl start docker # initiate docker
-
+  * $ docker ps # shows running iso file
+  * $ docker ps -a # shows all containers running or shut-down
+  * $ docker ps -qa # shows all id's of all pre-made containers
+  * $ docker rm $(docker ps -qa) # delete all the containers
+  * $ docker tag old-iso-name new-iso-name # make a copy of old-iso image with a new name with same id
+  * $ docker rmi docker-image-tag # removes the docker image with tag provided
+  * $ docker inspect elated_yonath # gives details about docker from which we can get ip
+  *
 ## Docker
   * Provides Environment for different OS and technologies
   * Docker uses kernel of base OS to develop more OS images for the use.
@@ -48,16 +58,32 @@
   * to run a docker image
   ```
   $ docker run -it fedora
+  # it stand for interactive terminal
   ```
-  ### Working
-  * in backend , it talks to the kernel of based OS and creates a new container with OS of given image which contains all those micro services that you need to work with
-  * after work completion , the container shutdowns itself
+  * to change docker name , run command
+  ```
+  $ docker run -it --name some-name docker-image-name process-to-run
+  ```
   * to check for shutdown container run Command
   ```
   $ docker ps -a
   ```
+  * to restart a shut down container , run Command
+  ```
+  $ docker attach container-name
+  ```
+  * to restart a docker image and exit without closing the container, run Command
+  ```
+    $ docker exec -it docker-container-name process-name
+  ```
+  ### Working
+  * in backend , it talks to the kernel of based OS and creates a new container with OS of given image which contains all those micro services that you need to work with
+  * after work completion , the container shutdowns itself
+
   * Docker is an application oriented system - > as soon as the application for which container was created is closed the container also shutdowns itself
   * Single process oriented system - > no more then one process can run on this container
+  * RUN - > create a new container from docker images
+
 
 ## login to Browser instead of putty
   * install shell in a box software
