@@ -24,6 +24,9 @@
   * GCE - > Google Cloud Engine && GCP - > Google Cloud Platform
   * CPU(Central Processing Unit) - > GPU(Graphical Processing Unit) -> TPU (Tensorflow Processing Unit) : All 3 can be used anytime for almost 12 hours continuously
   * Ip + port = Socket which is registered with some protocol
+  * every instance has its unique instance ID
+  * EBS can only be de-attached after running instances are closed(All)
+  * Never delete volume from instance if it is mounted and text saved in fstab file.
 
 ## DM
   it is of 2 types :
@@ -70,6 +73,7 @@
   * $ editor-name +line-number file-name # opens the editor at the exact line
   * $ netstat -nulp # which udp ports are being used over our OS
   * $ netstat -ntlp # which tcp ports are being used
+  * $ umount disk-mount-directory # to unmound a HDD
 ## Micro Services
   * Running only a single service over an OS
   * Its like running only IDLE in an OS and there is nothing present in it other then IDLE(e.g, My computer, Explorer are not in OS)
@@ -117,11 +121,47 @@
     * sender and receiver must have same protocol tcp or udp
     * create 2 python files one for receiver and one for sender
     * in receiver file,use socket module and write code
+
+    ```Python
+    #!/usr/bin/python2
+
+    import socket
+    re_ip="127.0.0.1"
+    re_port=4444  # 0 - 1024 -- you can check free udp port : netstat -nulp
+
+    # Creating UDP socket
+    #                 ip type v4       UDP
+    s=socket.socket(socket.AF_INET,socket.SOCK_DGRAM)
+
+    # fitting ip and port with UDP socket
+    s.bind((re_ip,re_port))
+
+      # receiver data from sender
+    data=s.recvfrom(100)
+    print(data)
+
+    s.sendto("hello",(re_ip,re_port))
+
     ```
-    # i will write later
-    ```
+
     * in sender file, re write code again
-    ```
-    # i will write later
+
+    ```Python
+    #!/usr/bin/python2
+
+    import socket
+    re_ip="127.0.0.1"
+    re_port=4444  # 0 - 1024 -- you can check free udp port : netstat -nulp
+
+    # Creating UDP socket
+    #                 ip type v4       UDP
+    s=socket.socket(socket.AF_INET,socket.SOCK_DGRAM)
+
+    # Sending data to target
+    s.sendto("hello",(re_ip,re_port))
+
+    data=s.recvfrom(100)
+    print(data)
+
     ```
     * run sender and receiver file both on different terminals
