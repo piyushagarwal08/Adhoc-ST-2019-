@@ -12,9 +12,12 @@
   10. Various Installers are ~ :
     Microsoft(MSI) ; Redhat(YUM{RHEL<8} / DNF{RHEL 8}) ; Python(pip) ; Go(fmt) ; Ruby(gem)
   11. gpgcheck=0 it means not to ask for a license to complete task
-  12. Python can be used by - > *Interpreter - bash
-                               *IDE
-                               *File
+  12. Python can be used by -
+
+                               * Interpreter - bash
+                               * IDE
+                               * File
+
   13. Deadcode Elimination - > segment of code removed from a code that is not being used  
   14. #!  it is called she bang or hash bang
   15. while writing python code first line should be
@@ -30,7 +33,7 @@
   * $ uptime                                # Details about time since when last logined
   * $ !history-number                       # history-number represents the sequence number of command in history and it runs the command again
   * $ !starting-text-of-command(bottom-up approach) #same as above
-  * $ echo vaiable-name                     # if variable is not existing , it gives blank without error
+  * $ echo variable-name                     # if variable is not existing , it gives blank without error
   * $ echo $ SHELL                          # predefined variable to show shell name
   * $ echo $ USER                           # predefined variable to show logged in user
   * $ echo $ LANG                           # shows default system language
@@ -53,7 +56,7 @@
     [Command] < -- > [SHELL] - > [Hard Disk]            (result send to SHELL)  
                        ^               |                        ^
                     (Not Found)-- (condition) -- (Found) - > [Kernel] - > [Hard Disk]
-                    
+
                          **SYSTEM CALL ARCHITECTURE**
 ## Make Function in Terminal ~ :
   $function-name()
@@ -63,7 +66,7 @@
     firefox www.google.com                #it opens google in firefox
     }
     run function by calling name
-    
+
 ## SHELL Scripting ~ :
   1. Save file with .sh extension
   2. always initiate a file by " #!/bin/bash "
@@ -78,17 +81,17 @@
     * -ne - > not equal
     * -lt - > less then
     * -le - > less then equal to
-    
+
 ## To Delay Code in Python ~ :
   import time
   time.sleep(No of seconds)           #apply code at part where you want to bring delay
-  
+
 ## To check if a certain command is right or not ~ :
   1. run any command
   2. run echo $?
      if output is 0 (command is correct) else not
-    
-  
+
+
 ## TASK ~ :
   1. Find the date and time of a command from history list as to when it was used
      { set a variable HISTTIMEFORMAT = "%d/%m/%y %T ", save in .bashrc for permanent }
@@ -102,7 +105,7 @@
   6. Install VLC player on windows using Python
     { use pywinauto module, run the code through cmd as administrator }
   7. Find various use-cases or tuple
-     { 
+     {
        * Tuples are used to group together related data, such as a person’s name, their age, and their gender.
        * immutable objects can allow substantial optimization
        * Tuples can potentially be used as keys
