@@ -68,8 +68,9 @@
 *   Owner is not neccessory that he is the creator of the file.
     *   For example you have purchased a bike but you are not the creator of the file you are owner of the file.
     *   And when we resell the bike owner changes.
-```
+
 ---- --- ---
+```
 --rw r-- r--
 Owner Group Others.
 ```
@@ -85,6 +86,7 @@ Owner Group Others
 ```
 *   The number written before owner name is called as number of links.
     *   Number of links means that how many ways we can use the file or directory kind of shortcuts or such.
+
 ```
 d           rwx    r-x     r-x      1               Jun 7  10:44    abc.txt
 

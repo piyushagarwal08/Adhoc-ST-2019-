@@ -3,8 +3,8 @@
 ## Notes ~
   * repl.it ~ > a website where one can work over any platform , and over any programming language
   * Virtual Box reads resource information from OS
-  * Virtual Box creates a free Hardware from the resources available free in your system
-  * time required to create an OS using docker maximum takes 1.2 sec
+  * Virtual Box creates a new Hardware from the resources available free in your system
+  * time required to create an OS using docker is 1.2 sec(maximum)
   * PAS - > Platform as a Service
   * every 3 years a new Redhat OS is launched
   * Backend project of redhat is Fedora that is fedora is developed for 3 years which after completion is produced with name Redhat
