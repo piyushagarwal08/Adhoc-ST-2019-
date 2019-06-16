@@ -91,7 +91,7 @@
   * to make an icon, mount HDD in /media by making a folder in it
 
   ### Make mounting permanent
-    * open /etc/stab
+    * open /etc/fstab
     * at end write
       partition-name mount-folder format-type
     * $ mount -a # checks if mounting is done properly
