@@ -41,19 +41,28 @@ whereis /*nfs
 /var/lib/nfs/state
 /var/lib/nfs/xtab
 ```
+* need to open /etc/nfs.conf file and
+
 *   Now we need to create a configuration file in ```/etc/exports``` so we have created a configuration file called exports
 *   change folder permissions
-```
-chmod 757 /nfs/
-```
+
 ```
 /nfs *(ro)
 ```
+  3 possible permissions
+  1. ro
+  2. rw
+  3. permission,no_root_squash - > to add changes as a user
+```
+
+chmod 757 /nfs/
+```
+
 *   Now run these
 *   ```exportfs -r``` is used to reload the ```exports``` configuration
 ```
 exportfs -r
-showmount -e 172.31.45.242
+showmount -e 172.31.45.242 #private ip
 systemctl status firewalld.target
 systemctl status iptables.service
 systemctl restart nfs
