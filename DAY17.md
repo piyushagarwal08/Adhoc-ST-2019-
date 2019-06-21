@@ -18,7 +18,8 @@
   * git reset --hard commit-sequence-given-in-log -> used to change the commit state
   * git push origin branch-name - > push the committed data into given branch name
   * git checkout branch-name -> change the branch being used
-
+  * git branch -a - > shows new branches added on repo but didn't recieved on cloning
+  
    **commit only after coming back to normal time**
 
 ## ML on AWS
