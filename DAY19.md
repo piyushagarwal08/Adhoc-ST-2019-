@@ -43,7 +43,7 @@
   ```
   * to extend pool storage / or attach another HDD
   ```
-  stratis pool add-data disk-name pool-name
+  stratis pool add-data  pool-name disk-name
   ```
   * its fstab should be written as such that first stratis service should be up then only mount the device
 
@@ -73,7 +73,7 @@
 ## SVM & SVR
   * Support Vector Machine used in Classification  
   * Support Vector Regression used in Regression
-  * SVM creates a common support vector between two objects and analyze the new object based on location of new object 
+  * SVM creates a common support vector between two objects and analyze the new object based on location of new object
 
 ## Notes
   * Google Brain Team - > open source,creator of tensor flow,deep learning team
