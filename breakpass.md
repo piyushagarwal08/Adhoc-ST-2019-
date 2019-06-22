@@ -44,3 +44,5 @@ chroot /sysroot/          # tab works well in this shell
 ```
  ls -ldZ /etc/shadow
 ```
+* to restart the system in graphical mode, write
+  ```startx```
