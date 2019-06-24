@@ -37,8 +37,9 @@ ansible localhost -m copy -a "src=index.html dest=/var/www/html"
     *   Variable (Optional)
     *   Tasks (Module)
 *   Playbook language
-```
+
 ---
+```
  - hosts:  localhost # This is target
    tasks:
     - command: date

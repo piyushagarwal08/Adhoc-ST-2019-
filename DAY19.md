@@ -46,8 +46,12 @@
   stratis pool add-data  pool-name disk-name
   ```
   * its fstab should be written as such that first stratis service should be up then only mount the device
+  ```
+  device-path mount-folder-path format x-systemd.requires=stratisd.service  0 0
+  ```
+  * in format 0 0 defines backup and protection by company default structure
 
-**pending**
+
 ----
 # Machine Learning
 ## KNN CLASSIFICATION
