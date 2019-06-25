@@ -90,3 +90,67 @@ x = firstcl.fit_transform(x).toarray()
 x.astype(int) # converts the array in proper integer type
 
 ```
+
+```python
+# Diabetic Data
+#from sklearn.datasets import load_diabetes
+import pandas as pd
+
+data = pd.read_csv('http://13.234.66.67/summer19/datasets/diabetest.csv')
+
+# now printing schema of data
+data.info()
+
+# Describing the data
+data.describe()
+
+# printing original data top 5 columns
+data.head(5)
+
+# plot a particular column with count using seaborn
+import seaborn as sb
+sb.countplot(data['Pregnancies'])
+
+sb.countplot(df['Glucose'])
+
+data.hist(figsize=(15,20))
+
+sb.pairplot(data)
+
+
+
+# Extract Attribute from Data Frame
+features = data.iloc[:,0:8].values
+
+# Extract Label from Data Frame
+label = data.iloc[:,8].values
+label
+
+label.shape
+
+# Seperating Training and Testing data
+from sklearn.model_selection import train_test_split
+trainFeature,testFeature,trainLabel,testLabel = train_test_split(features,label,test_size=0.2)
+
+from sklearn.tree import DecisionTreeClassifier
+clf = DecisionTreeClassifier()
+
+
+trained = clf.fit(trainFeature,trainLabel)
+
+
+
+predict = trained.predict(testFeature)
+
+from sklearn.metrics import accuracy_score
+accuracy_score(testLabel,predict)
+
+# Doing the same with KNN
+from sklearn.neighbors import KNeighborsClassifier
+kclf = KNeighborsClassifier(n_neighbors=5) # This is by default value of K
+
+# now Training Data
+ktrained = kclf.fit(trainFeature,trainLabel)
+predict = ktrained.predict(testFeature)
+accuracy_score(testLabel,predict)
+```
