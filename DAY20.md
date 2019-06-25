@@ -63,13 +63,13 @@ df.describe() # it describes the numerical columns
 from sklearn.preprocessing import Imputer
 # to check data to be none in column/column oriented axis=0
 # strategy is used to replace the missing value
-imp=Imputer(missing_values='Nan',axis=0,strategy='mean')
+imp=Imputer(missing_values='NaN',axis=0,strategy='mean')
 # fitting columns that we want to process
 impute = imp.fit(x[:,1:3]) # needs only 2d array
 # fit is used to make a schema
 
 # now for transforming the fitted columns
-x[:,1:3] = impute.transform(x[:.1:3])
+x[:,1:3] = impute.transform(x[:,1:3])
 x  # printing the value of x, missing values are replaced by strategy
 
 # to label any string with some int or float value
