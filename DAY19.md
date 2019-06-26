@@ -51,7 +51,16 @@
   ```
   * in format 0 0 defines backup and protection by company default structure
 
-
+  * To create a snapshot(backup) of filesystem
+  ```
+  stratis filesystem snapshot pool-name filesystem-name-to-make-snapshot-of file-name-of-snapshot
+  stratis filesystem snapshot pool1 file1 snap1
+  ```
+  * to find the created list of snapshots
+  ```
+  stratis filesystem list
+  ```
+  * a snapshot is a copy of file system which can be allocated anywhere and it takes size from pool (maybe not sure)
 ----
 # Machine Learning
 ## KNN CLASSIFICATION
