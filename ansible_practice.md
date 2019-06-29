@@ -38,7 +38,8 @@
     cron_file: ansible_yum-autoupdate
 ```
 
-## ec2
-```
-
-```
+## aws Configure
+ * Go to security Credentials download security access token file
+ * run command ``` aws configure ```
+ * enter your credentials from file
+ * 
