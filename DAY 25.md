@@ -75,6 +75,7 @@
 ```
 ## IMPORTANT IN Supervised Machine Learning
  * Label Encoding
+ * Imputer
  * One Hot Key
  * Train test data
  * Scaling
