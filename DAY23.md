@@ -9,9 +9,9 @@
   * Fixing an IP is termed as static ip
 
 ## Setting up static IP
-  * ping ip-address -> check if ip is working properly
+  * ping ip-address -> find a ip which shows Destination Host Unreachable
   * ping server-name (if not possible then set in resolv.conf )
-  * set ip
+  * set ip not reachable
   ```
   cd /etc/sysconfig/network-scripts/
   ```
@@ -30,6 +30,10 @@
   ```
   * route -n # shows the values of kernel ip routing table
   * 0.0.0.0 means anywhere
+  * run command
+  ```
+  systemctl restart network-online.target
+  ```
   * after configuration, reboot which must show the set ip
   * resolv.conf - > gives ip from name
   * after setting static ip
