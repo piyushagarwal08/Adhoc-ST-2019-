@@ -41,4 +41,63 @@
     ```
     sysctl net.ipv4.ip_forward = 1
     ```
-  
+  ## Archive
+    * for gzip  --z  --gz
+    ```
+    tar -cvzf file.tar.gz file-to-make-tar
+    ```
+    * for bzip2
+    ```
+    tar -cjvf file.tar.bz2 folder-name
+    ```
+    * for xz
+    ```
+    tar -cJvf file.tar.xz folder-name
+    ```
+    * to decompress files elsewhere, copy the tar in that directory and decompress it by
+    ```
+    tar -xvf tar-name
+    ```
+    * to decompress at certain path
+    ```
+    tar -xvf tar-name -C path-name
+    ```
+
+  ## VDO -> Virtual Data Optimizer
+    * Minimum space requires = 15 to 20 GB
+    * maintins the copy of two or more copies
+    * the virtual size remains same and not increases even if same file is copied in the same folde again and again
+    * it is a optimizer and maintains if data is not duplicated
+    * for repo  requires
+    ```
+    baseurl=AppStream and BaseOS
+    ```
+    * repo link will be provided by the examiner
+    * for installation
+    ```
+    yum install vdo kmod-kvdo
+    ```
+    * it is not a service
+    * to create a vdo
+    ```
+    vdo --create --name=vdo1 --device=/dev/vda --vdoLogicalSize=50G
+    ```
+    * logical size can be greater then actual block device
+    * it is an dev mapper technology device <b>DM</b>
+    * to get information about vdo device
+    ```
+    vdo status --name=particular-vdo-name
+    ```
+    * to get all vdo devices list
+    ```
+    vdo status
+    ```
+    * to get list of vdo devices, uses 4GB for meta-data
+    ```
+    vdostats --human-readable
+    ```
+    * saving % denotes the amount of duplicated data
+    * to format
+    ```
+    mkfs.xfs /dev/mapper/vdo1
+    ```
