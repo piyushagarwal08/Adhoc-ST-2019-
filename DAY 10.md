@@ -27,7 +27,7 @@
   * $ docker tag old-iso-name new-iso-name # make a copy of old-iso image with a new name with same id
   * $ docker rmi docker-image-tag # removes the docker image with tag provided
   * $ docker inspect elated_yonath # gives details about docker from which we can get ip
-  *
+
 ## Docker
   * Provides Environment for different OS and technologies
   * Docker uses kernel of base OS to develop more OS images for the use.

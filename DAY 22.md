@@ -38,7 +38,7 @@
 ### Naive Based Algorithm
   * It is based upon Conditional Probablity
   * It is used by mail-servers to relatively differentiate between spam and ham
-  * Creating collection of worls from a single word is stem and process by which these words are generated is called stemming
+  * Creating collection of words from a single word is stem and process by which these words are generated is called stemming
   * Example - :
     goes,gone,going,go >- all are part or have root node as go
 

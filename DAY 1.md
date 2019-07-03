@@ -92,7 +92,7 @@
       * Python is strictly binded
       * examples ( int,float,str,byte,tuple)
   2. Mutable
-      *examples (list,set,dictionary)
+      examples (list,set,dictionary)
 
 ## TASK OF THE DAY~ :
   1. show files and folders of different folders other then desktop as default on monitor
