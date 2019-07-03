@@ -101,3 +101,35 @@
     ```
     mkfs.xfs /dev/mapper/vdo1
     ```
+
+# Computer Vision
+
+  ## Ideas
+    * find specific keyword from a book and filter within 1~3 seconds
+    * search an object in an image / video
+    * find moving direction of object like animal or human
+    * find depth or distance from image capture
+    * face recognition (using LBpH with opencv , for more accuracy use dlib library available in DL)
+    * using face_recognition library made by facebook i coordination with dlib, face can be easily recognized ( need high cpu and gpu)
+    * YOLO - > you only look once -> tech used in face recognition mobile which gives 90+ accuracy for face_recognition with single image
+    * Kairos (no need to code)
+
+# Regression
+  * Regression is used in situations where the result is predicted based on datasets of various situations
+  * it is of 3 types:
+    1. Linear Regression
+      y = mx + c
+      y-> outcome(dependent variable)  x -> input(independent variable)
+    2. Polynomial
+    3. Logistic Regression(used in DeepLearning)
+
+  ## Linear Regression
+    * It is of 2 types
+      1. Singular independent variable equation ~ y = mx + c
+      2. Multiple independent variable equation ~ y = mx+ c + m1x1 + m2x2
+
+
+## tasks
+  * live cricket data (web scrap) in csv format and store in html folder
+  * find player record - > no of balls  -> runs (batsmen)
+  * draw a linear model for no of balls and runs
