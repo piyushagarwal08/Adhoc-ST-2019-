@@ -493,7 +493,7 @@ ps -aux --sort=pcpu
   ```
   /dev/mapper/vdo1 path-to-mount xfs defaults,x-systemd.requires=vdo.service 0 0
   ```
-  
+
 ----
 
 # RHEL 8 exam tips  ( NOTHING IS RIGID ... SAMEY KE SAATH PARIVARTAN NISHCHIT HAI )

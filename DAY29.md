@@ -67,6 +67,7 @@
 
 ## Lemmatization
   * it creates a meaningful word from a collection of words
+  * Used for sentimental analysis
 
 ## Task
   * Take picture of a newspaper and extract text + apply nltk + remove stop words and plot top 10 frequency graph(cv2 + )
