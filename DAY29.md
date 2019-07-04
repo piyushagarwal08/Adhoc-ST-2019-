@@ -68,8 +68,6 @@
 ## Lemmatization
   * it creates a meaningful word from a collection of words
 
-
-
 ## Task
   * Take picture of a newspaper and extract text + apply nltk + remove stop words and plot top 10 frequency graph(cv2 + )
   * make word from a sentence
