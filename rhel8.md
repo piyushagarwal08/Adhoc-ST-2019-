@@ -115,6 +115,7 @@ sync; echo 3 | sudo tee /proc/sys/vm/drop_caches
 * $ mount -o remount,rw /    # if opens read only mode in emergency mode
 * $ dhclient -r    # to remove previous dhcp state
 * $ dhclient -v br0    # to restart dhcp client and provide with dhcp service to local system
+* $ nmtui         # it opens network ip allocation GUI
 ```
 ----
 ## LVM
