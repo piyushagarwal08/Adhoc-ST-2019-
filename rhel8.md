@@ -507,16 +507,19 @@ ps -aux --sort=pcpu
   ```
   * to start service
   ```
-  systemctl start autofs.service
+   /sbin/service autofs restart
   ```
-  * to enable the service
+  * to view mount points
   ```
-  systemctl enable autofs.service
+  /sbin/service autofs status
   ```
   * after installing Autofs, we are provided with 2 files named
     1. /etc/auto.master
     2. /etc/auto.misc
-
+  * If you modify the /etc/auto.master configuration file while autofs is running, you must tell the automount daemon(s) to reload by
+  ```
+  /sbin/service autofs reload
+  ```
 
   * Work of autofs is done over a user server where N users can connect (using something like ssh) and access the NFS shared by main server
 
@@ -528,12 +531,13 @@ ps -aux --sort=pcpu
 
     * Entry in auto.misc is something like
     ```
-    user-name-who-want-to-access   -fstype=nfs,rw,vers=3   server-ip/nameserver:path-of-nfs-to-mount
-                  harry  -fstype=nfs,rw,vers=3  adhoc.example.com:/mnt/share
+    subdirectory-to-create-when-user-logs-in   -fstype=nfs,rw,vers=3   server-ip/nameserver:path-of-nfs-to-mount
+                  mynfs-directory  -fstype=nfs,rw,vers=3  adhoc.example.com:/mnt/share
     ```
+    * This subdirectory is created dynamically by automount. It should not actually exist on the client machine.
     * Entry in auto.master is something like
     ```
-    path-of-nfs-where-you-wish-to-mount  /etc/auto.misc
+    directory-to-mount-on  /etc/auto.misc --timeout 60
     ```
 
 ----
