@@ -507,21 +507,23 @@ ps -aux --sort=pcpu
   ```
   * to start service
   ```
-   /sbin/service autofs restart
+  service autofs restart
   ```
   * to view mount points
   ```
-  /sbin/service autofs status
+  service autofs status
   ```
   * after installing Autofs, we are provided with 2 files named
     1. /etc/auto.master
     2. /etc/auto.misc
   * If you modify the /etc/auto.master configuration file while autofs is running, you must tell the automount daemon(s) to reload by
   ```
-  /sbin/service autofs reload
+  service autofs reload
   ```
 
   * Work of autofs is done over a user server where N users can connect (using something like ssh) and access the NFS shared by main server
+
+  * You can also examine the ```/etc/rmtab``` file on the server to see how frequently its clients are mounting and unmounting automounted filesystems. When a filesystem is mounted, an entry is added to the ```/etc/rmtab file```
 
   ## Server Side
     * create a nfs directory , add path is exports and make it shareable by ```exportfs -r```
