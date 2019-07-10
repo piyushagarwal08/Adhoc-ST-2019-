@@ -10,12 +10,12 @@
   *
 
 ## Project On ML
-  1.
+  1. first
     * we have a image-data of 10G
     * provide random id to images ( same id to same image )
     * categories all photos in directory
     * search the pic over google network and find the details about image person
-  2.
+  2. Second
     * Swach Bharat Abhiyaan
     * create an app which is used by indians
     * people will click image for trash sites and upload to our app
