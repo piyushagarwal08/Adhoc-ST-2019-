@@ -2,6 +2,10 @@
 
 ## NFS
  ### Server
+  * after installing start service by
+  ```
+  systemctl start nfs-server
+  ```
   * for ubuntu ( sudo apt-get install kernel-nfs-server)
   * for rhel ( sudo yum install nfs-utils )
   * Create a directory to use as nfs ( mkdir /shareable-directory)
