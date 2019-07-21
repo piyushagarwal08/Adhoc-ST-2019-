@@ -23,3 +23,12 @@ EXPOSE 80
   ```shell
   $ setfattr -n user.text -v "Hello World" file1
   ```
+  * It is possible to easily remove boot order list menu using ```efibootmgr``` command
+  * To check the boot order list menu, run command
+  ```
+  efibootmgr  (as root)
+  ```
+  * to delete a boot entry from system , run command
+  ```
+  efibootmgr -b boot-order-number -B
+  ```
