@@ -5,12 +5,13 @@
     ```
     pip3 install django
     ```
-* Every time you start some project 
-    1. make a new folder and change directory
-    2. run command
+* Every time you start some project, create a new folder and 
+    * run command
     ```
     django-admin startproject project-name
     ```
+    * This will create a folder with the specified project-name containing all required files
+
 * to start django server , run command
     ```
     python3 manage.py runserver
@@ -21,45 +22,66 @@
     ```
     
 ## Starting with a webapp
+Webapp refers to a part of your website. In Django the webiste is divide into various applications with each application having its own work.
 * to create a webapp, run command
     ```
     python3 manage.py startapp app-name
     ```
-* after creating any app, open settings.py and add the name of your app in ```INSTALLED_APPS``` list
-* the webpages are made as functions inside ```views.py``` 
+* the webpages are routed as functions inside ```views.py```   
 Example
     ```Python
-    from django.shortcuts import render
     from django.http import HttpResponse
 
     def index(request):
         return HttpResponse("<h1>Text-Message</h1>")
+        # HttpResponse is used like a print function to print something on web page
+        # request is used to get the webpage 
     ```
-* create a ```urls.py``` file to manage all the urls inside the webapp
+    
+* Every app in a project contains a file called ```urls.py``` which contains all the links related to that specific project
 
 * in urls.py insert code as 
-    ```python3
+    ```py
     from django.urls import path
     from . import views
 
     urlpatterns = [
         path("",views.index,name="index"),
+        path("/app1",views.func2,name="func2")
     ]
+    # "" empty string denotes localhost:8000 
     ```
-* Now restart the server 
     
-* To open some webpage (html),In ```views.py``` file write
+## Using Templates
+* In Django, to use html pages, templates are used
+* Inside your webapp, create a new folder called templates and inside it make another folder with webapp name
+```shell
+$ mkdir -p templates/web-app
+```
+* Save all the html files inside this folder
+* Then open, ```settings.py``` file from main project folder
+* add entry 
+```py
+TEMPLATES = [
+    {
+        'DIRS': ["app-name/templates",],
+    }
+]
+```
+* To open some html webpage(template) ,In ```views.py``` file write
+    
     ```python
     from django.shortcuts import render
 
     def index(request):
         return render(request,"app-name/page-name-stored-in-templates-dir.html")
-    
+    # render works to route the url to indicated web-page
     ```
-* save the html page in new folder ```templates/app-name/```
+* By Default, Django search for the folder specified in the settings.py file for templates
 * To route to a different web-page using anchor-tag,the syntax is
 ```html
 <a href="% url 'name-of-url-from-urls.py' %">text-to-work-as-link</a>
+<!-- {% something %} is a format of 'jinja' language -->
 ```
 * For similar structured web-pages,instead of repeating the html code
     1. create a base.html file with the html structure code
@@ -88,6 +110,38 @@ Example
     {% endblock %}
     ```
 
+## Using CSS,JS,BootStrap
+* All CSS,JS and BootStrap.. these are static files which have no need to be changes thus In Django,these are known as ```static files```
+* All static files are stored inside the app in a directory named ```static``` same as templates.
+* So for all img,css,js and bootstrap,create two directories
+inside web-app folder
+```shell
+mkdir -p static/web-app/
+```
+* In ```settings.py``` file of main folder add a new entry in the list of ```INSTALLED_APPS```
+```python
+INSTALLED_APPS = [
+    'web-app.apps.webappConfig',
+]
+```
+* Finally inside your html file, do the following changes
+    1. code should be initiated with following ```jinja``` code
+    ```html
+    {% load static %}
+    ```
+    2. Replace the html ```src``` tags syntax in this way
+    ```html
+    <img src="folder1/img/img1.jpeg"> to 
+    <img src="{% static 'web-app/img/img1.jpeg' %}">
+
+    <!-- Similarly -->
+      <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+                            to
+
+    <link href="{% static 'QuizMania/lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet"> 
+    ```
+* {% static %} -> it tells to load the nearest static folder inside html code
+* {% static 'path' %} -> is used to define the path inside of static folder for the specific file
 
 
 # Database
