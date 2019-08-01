@@ -53,6 +53,7 @@ Example
     ```
     
 ## Using Templates
+### MADE SURE ALL FILES ARE PROVIDED EXECUTABLE PERMISSIONS , TO BE PRECISE 755
 * In Django, to use html pages, templates are used
 * Inside your webapp, create a new folder called templates and inside it make another folder with webapp name
 ```shell
@@ -111,6 +112,7 @@ TEMPLATES = [
     ```
 
 ## Using CSS,JS,BootStrap
+### MADE SURE ALL FILES ARE PROVIDED EXECUTABLE PERMISSIONS , TO BE PRECISE 755
 * All CSS,JS and BootStrap.. these are static files which have no need to be changes thus In Django,these are known as ```static files```
 * All static files are stored inside the app in a directory named ```static``` same as templates.
 * So for all img,css,js and bootstrap,create two directories
@@ -145,6 +147,7 @@ INSTALLED_APPS = [
 
 
 # Database
+### MADE SURE ALL FILES ARE PROVIDED EXECUTABLE PERMISSIONS , TO BE PRECISE 755
 * To create a superuser to access all the tables inside a database,run command
     ```python
      python manage.py createsuperuser
