@@ -145,6 +145,45 @@ INSTALLED_APPS = [
 * {% static %} -> it tells to load the nearest static folder inside html code
 * {% static 'path' %} -> is used to define the path inside of static folder for the specific file
 
+## Routing From One Page to another (anchor)
+* <b>Onclick ~ button function(using js)</b>
+    1. to make a certain line of text clickable, run code in this similar context
+        ```html
+        <div class="col-md-6 col-lg-3">
+          <div class="feature-block">
+		  <img src="{% static 'QuizMania/img/docker.svg' %}" alt="img" class="img-fluid">
+            <h4>Docker</h4>
+            <p onclick="Docker()">Docker is a set of coupled software-as-a-service and platform-as-a-service products that use operating-system-level virtualization to develop and deliver software in packages called containers. The software that hosts the containers is called Docker Engine. </p>
+          </div>
+        </div>
+        ```
+        ```js
+        <script>
+            function Docker(){
+                location.replace("{% url 'test' %}")
+            }
+        </script>
+        ```
+    2. <u>```onclick="function-name()"```</u> is used to point to the js code in ```script``` tag.
+    3. <u> ```location.replace``` </u> is used to replace the context of current page with another with replacing chance to go back to previous page
+    4. <u>```{% url 'name-of-url-in-urls.py' %}```</u> -> used to point to the different url to send on clicking the text
+* After the above code , in ```html``` file, add the following lines in ```urls.py``` file pf web-app
+    ```python
+    from django.urls import path
+    from . import views
+    urlpatterns = [
+        path("",views.index),
+        path("any-text-to-show-after-/",views.function-name-to-change-page,name="name-for-this-url"),
+        ]
+    ```
+* Make a new function in ```views.py``` that will do the work to render from current page to another
+    ```python
+    def function-name(request):
+    return render(request,'web-app/page-to-load.html')
+    ```
+
+
+
 
 # Database
 ### MADE SURE ALL FILES ARE PROVIDED EXECUTABLE PERMISSIONS , TO BE PRECISE 755
