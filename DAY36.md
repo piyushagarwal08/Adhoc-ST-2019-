@@ -181,8 +181,26 @@ INSTALLED_APPS = [
     def function-name(request):
     return render(request,'web-app/page-to-load.html')
     ```
+* <b> OR instead of above code,just do the following </b>
+    1. in the input tag, write
+    ```html
+    <p onclick="window.location.href='http://localhost/2'" >any-text</p>
+    ```
+    2. the text will move to different url on click
 
-
+## Using Loops in Templates
+* for loop can be implied in a template easily using ```jinja``` format
+* remember that , jinja by default thinks of ```range(value)``` as string only
+* its syntax is like 
+```html
+<ul>
+{% for test in '123' %}
+    <li>hello</li>
+{% endfor %}
+</ul>
+```
+* the above code will print ```hello``` as list item 3 times
+* the variable test can be accessed as ```{{test}}```
 
 
 # Database
