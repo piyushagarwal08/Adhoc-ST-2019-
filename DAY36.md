@@ -292,7 +292,81 @@ def index(request):
 * <u>csrf_token</u> : By default, for security reasons , django doesn't support submission of forms and thus requires this token to know that actually our web  application is submitting this form 
 
 
+# Users Authentication
+* Create a new app called authentication
 
+## Urls.py
+* it contains 3 urls:
+    1. index page
+    2. login page
+    3. logout page
+
+## Views.py
+* for session authentication of user at index page
+    ```python
+    from django.shortcuts import render
+
+    def index(request):
+        if not request.user.authenticated:
+            return render(request,"users/login.html",{"message":None})
+        context = {
+            "user":request.user
+        }
+        return render(request,"users/user.html",context)
+    ```        
+* for login authentication, if users entered credentials are right or not,
+    ```python
+    from django.contrib.auth import authenticate,login
+    from django.http import HttpResponseRedirect
+    from django.shortcuts import render
+
+    def login_check(request):
+        username = request.POST["username-field-name"]
+        password = request.POST["password-field-name"]
+        user = authenticate(request,username=username,password=password)
+        if user is not None:
+            login(request,user) # it is predefined django function to set the cookies
+            return HttpResponseRedirect(reverse("index-page-name-in-urls.py"))
+        else:
+            return render(request,"users/login.html",{"message":'Invalid Credentials'})
+    ```
+* for logout , to make sure session is removed for current user, the following code is useful
+    ```python
+    from django.contrib.auth import logout
+    from django.shortcuts import render
+
+    def logout_check(request):
+        logout(request,user)
+        return render(request,"users/login.html",{"message":"Logged Out Successfully"})
+
+## To add Users in your system Database
+* Ways to be able to add users
+    1. way is through Django interface shell manually
+    ```python
+    from django.contrib.auth.models import User
+
+    user = User.objects.create_user("name-of-user","email-of-user","password-of-user")
+
+    user.save()
+    user.commit()
+    ```
+    2. we can create a registeration page and in backend run the program to insert data inside the database
+
+* User object has various other field , that can be used to store data inside user dataabse,such as:
+    1. first_name
+    2. last_name
+    3. administrator or not
+    4. username etc
+* To user modification properties of ```User``` model,just follow the similar syntax
+    ```python
+    from django.contrib.auth.models import User
+
+    user = User.objects.create_user("name","email","pass")
+    user.first_name = "set-any-first-name"
+    user.save()
+    user.save()
+    ```
+    
 # HTML
 
 ## Attributes
