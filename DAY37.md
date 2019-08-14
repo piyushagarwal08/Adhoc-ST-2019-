@@ -44,6 +44,14 @@
     ```python
     driver.find_element_by_xpath("enter the copied path").click()
     ```
+* Certain methods to find the elements are:
+    1. find_element_by_id("enter-specific-id")
+    2. find_element_by_xpath("enter-specific-xpath")
+    3. find_element(By.ID,"enter-specific-id")
+        * to use ```By``` function, we use the following module
+            ```from selenium.webdriver.common.by import By```
+    4. find_element_by_css_selector("input[value=name-given-in-value-of-input-field]")
+    5. find_element(By.XPATH,"enter-specific-xpath")
 
 * To close the tab , opened initially using  ```driver.get``` command, we use ```driver.close()```
 * To close all the opened tabs, use ```driver.quit()``` command, instead of ```driver.close()``` inside the python code.
@@ -91,6 +99,8 @@
         ```
     4. above code will create an instance of radio button
     5. To check if its selected or or not, just use ```radio_button.isselected()``` function
+* To clear certain fields/text_fields use the function
+    ```driver.find_element_by_id("id").clear()```
 
 ## Wait Commands
 ### Implicit Wait Command
@@ -100,5 +110,17 @@
 * Thus this prevents the synchronisation problem
 
 ### Explicit Wait Command
-* It is used to define the wait condition for some specific element instead of whole present in the code </br>
-*** to be continued ***
+* It is used to define the wait condition for some specific element instead of whole present in the code 
+* requires another module named  ```from selenium.webdriver.support import expected_conditions```
+* To make sure the code waits for certain condition to be True,follow the steps
+    1. create a instance to define how much time driver has to wait and it is done using module
+        ```python
+        from selenium.webdriver.support.ui import WebDriverWait
+        wait = WebDriverWait(driver,time-in-seconds)
+        # time here is the max time it will wait for a certain condition to be true, if condition is true before max-time then the code will not wait anymore
+        ```
+
+    2. find the ID or Xpath or Value(css-selector)
+    3. type the following code
+        ```python
+        wait.until(expected_conditions.element_to_be_clickable((By.XPATH,"enter-the specific - xpath"))
