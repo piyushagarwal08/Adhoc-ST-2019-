@@ -124,3 +124,77 @@
     3. type the following code
         ```python
         wait.until(expected_conditions.element_to_be_clickable((By.XPATH,"enter-the specific - xpath"))
+
+## Find how many similar elements Exist
+* In websites, the similar elements like input boxes or text fields or buttons have similar class as well and thus we can calculate the no of similar elements in a webpage using class
+* The function used to do so is ```find_elements(By.CLASS_NAME,"name-of-class")
+
+## Working with Dropdown list
+* To work over dropdown list, the function required is ```Select```, it can be imported as
+```python
+from selenium.webdriver.support.ui import Select
+dropdown_list  = Select(driver.find_element_by_id("id-of-dropdown list"))
+```
+* To select a option from list
+```python
+dropdown_list.select_by_visible_text("Specify the text to be selected from options")
+```
+* To select by Index
+```python
+dropdown_list.select_by_index(index-position-without-quotes)
+```
+* To select by Value, since every option in drop down list has different value
+```python
+dropdown_list.select_by_value("enter the value of the specific option")
+```
+* To calculate no of options in drop down list use ```len(dropdown_list.options)```
+* ```dropdown_list.options``` provides a ```list``` of all the options given in dropdown list
+* To find all the available options in a dropdown list, the value of options, use ```dropdown_list.options[0].text```
+
+## Working with links 
+* to store or find all the links available in a webpage we use ```TAG_NAME``` function
+```python
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+
+links = driver.find_elements(By.TAG_NAME,"a")
+# this will provide a list of all the lists present on webpage
+```
+* To print the text value from links we just use ```links.text``` for every link stored in ```links list```
+
+* Using the values provides with links in website , we have 2 ways to automate the selection of links
+    1. By.LINK_TEXT
+    2. By.PARTIAL_LINK_TEXT 
+* LINK_TEXT ~> In this we provide the complete exact value of the link
+```python
+from selenium.webdriver.common.by import By
+from selenium import webdriver
+
+driver = webdriver.Chrome(executable_path="thepath")
+
+driver.find_element(By.LINK_TEXT,"REGISTER").click()
+#or
+driver.find_element_by_link_text("text-in-link")
+# or
+driver.find_element(By.PARTIAL_LINK_TEXT,"REG").click()
+# <a href="http://www.google.com">REGISTER</a>
+```
+
+## Alerts
+* To work on alert boxes , we need to make sure that our automated browser is being switched to Alert box that we can do using ```driver.switch_to_alert()```
+* To Accept a alert box, run command ```driver.switch_to_alert().accept()```
+* To reject a alert box, run command ```driver.switch_to_alert().dismiss()```
+* To switch to default content, or normal page use function ```driver.switch_to.default_content()```
+
+## Iframes
+* The selenium works on page not on frames
+* To work on different frames, we need to specify the frame the selenium has to work on available on the page
+* To switch frames the function used is ```driver.switch_to.frame("name-of-frame/class-name/frame-id")```
+* To switch to default content, or normal page use function ```driver.switch_to.default_content()```
+
+## Window Handles
+* The tabs present in a browser of selenium are referred as ```handles```
+* To get the value of current working ```window handle```, we use the function ```driver.current_window_handle```
+* the value of ```window handle``` is a random generated sequence of ```Alpha~Numerical digits```
+* To get a list of all the opened ```tabs``` in selenium ```browser``` we use the function ```driver.window_handles```
+* To switch the working window similar to frames we use the function ```driver.switch_to.window('sequence-of-window-handle')```
