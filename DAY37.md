@@ -198,3 +198,17 @@ driver.find_element(By.PARTIAL_LINK_TEXT,"REG").click()
 * the value of ```window handle``` is a random generated sequence of ```Alpha~Numerical digits```
 * To get a list of all the opened ```tabs``` in selenium ```browser``` we use the function ```driver.window_handles```
 * To switch the working window similar to frames we use the function ```driver.switch_to.window('sequence-of-window-handle')```
+
+## Adding Chrome Extensions
+* To use certain chrome extension, instead of applying them manually at run time, it's easy to add them before hand using the ```.crx``` file
+* To add a extension , first we need the .crx file of the extension and for that~
+    1. first open ```https://crxextractor.com/``` and add the url of the specific action
+    2. Download the file and move it to path ```/usr/bin``` with ```chromedriver``` and make sure that it is ```executable```
+* use this code to add the specific extension in broswer
+    ```python
+    from selenium.webdriver.chrome.options import Options
+    options = Options()
+    options.add_extension("path-of-crx-file")
+    driver = webdriver.Chrome(options=options)
+    ```
+* Using above code, the opened browser will be available with  ```specified``` extension by default
