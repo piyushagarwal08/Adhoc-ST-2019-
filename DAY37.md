@@ -212,3 +212,129 @@ driver.find_element(By.PARTIAL_LINK_TEXT,"REG").click()
     driver = webdriver.Chrome(options=options)
     ```
 * Using above code, the opened browser will be available with  ```specified``` extension by default
+
+## Window Scrolling
+* There are 3 basic approaches to scroll down a web - page
+    1. ### By Pixel Position
+        * To scroll down the web page by certain pixels ,which are calculated by intuition, we can run ```javascript``` format code, that is
+        ```python
+        from selenium import webdriver
+        driver = webdriver.Chrome(executable_path="/usr/bin/chromedriver")
+
+        driver.execute_script("window.scrollBy(0,1000)","")
+    
+        # driver.execute_script("window.scrollBy(starting-position,ending-position)","")
+        ```
+        * This is a specific format made to use webpage scrolling
+
+    2. ### Scroll Page till some element is not discovered
+        * This method is used to scroll down the page until some specified element is not found
+        ```python
+        from selenium import webdriver
+        driver = webdriver.Chrome(executable_path="/usr/bin/chromedriver")
+
+        element_to_Scroll_to = driver.find_element_by_xpath("xpath-of-that-element")
+        driver.execute_script("arguments[0].scrollIntoView();",element_to_Scroll_to)
+        
+        # this code will make sure that page is scrolled down till the specified xpath is not found over webpage and it is shown on top
+        ```
+    
+    3. ### Scroll down to the end of page
+        * This is thing is not necessarily required , but still
+        ```python
+        from selenium import webdriver
+        driver = webdriver.Chrome(executable_path="/usr/bin/chromedriver")
+
+        driver.execute_script("window.scrollBy(0,document.body.scrollHeight)")
+        ```
+## Mouse Actions
+* Various actions that can be done using mouse are:
+    1. Mouse hovering
+    2. Right click using mouse
+* For use of mouse in automated selenium browser we use the module ```ActionChains```
+* It can be imported as ```from selenium.webdriver import ActionChains```
+* Way os using mouse actions
+    1. To hover over a 3 elements and click on an element, the following code is useful
+    ```python
+    from selenium import webdriver
+    from selenium.webdriver import ActionChains
+
+    # automated browser is initiated
+    driver = webdriver.Chrome(executable_path="/usr/bin/chromedriver")
+
+    # Need to make instances of elements need to do mouse actions on
+    element1 = driver.find_element_by_xpath("xpath-of-element-no-1")
+    element2 = driver.find_element_by_xpath("xpath-of-element-no-2")
+    element3 = driver.find_element_by_xpath("xpath-of-element-no-3")
+
+    # time to create an object of ActionChains for mouse actions
+    actions = ActionChains(driver)
+
+    actions.move_to_element(element1).move_to_element(element2).move_to_element(element3).click().perform()
+    # perform defines the final point, to define that all mouse actions are defined
+
+    # the above code will hover mouse over element 1 then move to element 2 location and finally followed by moving to element3 location and will click on it
+    ```
+
+    2. To double click on some element , use the ```double_click()``` function
+    ```python
+    from selenium import webdriver
+    from selenium.webdriver import ActionChains
+
+    # automated browser is initiated
+    driver = webdriver.Chrome(executable_path="/usr/bin/chromedriver")
+
+    # Need to make instances of elements need to do mouse actions on
+    element1 = driver.find_element_by_xpath("xpath-of-element-no-1")
+    
+    # time to create an object of ActionChains for mouse actions
+    actions = ActionChains(driver)
+
+    actions.double_click(element1).perform() # double click on element
+    ```
+
+    3. Right click on any element
+    * To perform right click function over any element we use the ```context_click()``` function
+    * The following code is used to perform this action using ```ActionChains``` module
+    ```python
+    from selenium import webdriver
+    from selenium.webdriver import ActionChains
+
+    # automated browser is initiated
+    driver = webdriver.Chrome(executable_path="/usr/bin/chromedriver")
+
+    # Need to make instances of elements need to do mouse actions on
+    element1 = driver.find_element_by_xpath("xpath-of-element-no-1")
+    
+    # time to create an object of ActionChains for mouse actions
+    actions = ActionChains(driver)
+
+    actions.context_click(element1).perform() # double click on element
+    ```
+
+    4. Drag and Drop things using mouse
+    * This is not much of a usable function
+    * It is used to move an element from one position to another element position
+    * For this first find the ```source-position-element``` and ```destination-position-element```
+    * Then create ```action``` instance of ```ActionChains(driver)``` function
+    * Finally use  ```drag_and_drop``` function for the purpose
+    ```python
+    from selenium import webdriver
+    from selenium.webdriver import ActionChains
+
+    # automated browser is initiated
+    driver = webdriver.Chrome(executable_path="/usr/bin/chromedriver")
+
+    # Need to make instances of elements need to do mouse actions on
+    source_element = driver.find_element_by_xpath("xpath-of-element-no-1")
+    destination_element = driver.find_element_by_xpath("xpath-of-element-no-1")    
+    # time to create an object of ActionChains for mouse actions
+    actions = ActionChains(driver)
+
+    actions.drag_and_drop(source_element,destination_element).perform()
+    ```
+
+## Uploading Files
+* To upload certain file, we just need to ```find the element``` using ```id/name/xpath```
+* Then just use ```send_keys``` method to upload the file by specifying the ```path``` of file need to be uploaded.
+
