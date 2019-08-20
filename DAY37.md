@@ -338,3 +338,65 @@ driver.find_element(By.PARTIAL_LINK_TEXT,"REG").click()
 * To upload certain file, we just need to ```find the element``` using ```id/name/xpath```
 * Then just use ```send_keys``` method to upload the file by specifying the ```path``` of file need to be uploaded.
 
+## Download Files
+* To download any files, just make sure to provide required amount of wait for downloading before closing the browser
+* To change the default directory of automated browser
+    ```python
+    from selenium import webdriver
+    from seleium.webdriver.chrome.options import Options
+
+    chrome_options = Options()
+
+    # prefs stands for preferances
+    # in the dictionary we can add any number of required changes
+    chrome_options.add_experimental_option("prefs",{"download.default_directory": "path-of-download-directoroy"})
+
+    driver = webdriver.Chrome(executable_path="path-of-driver",chrome_options = chrome_options)
+    ```
+* downloading any file is similar as clicking a download button using ```find element```
+
+## Excel Operations
+* For tasks related to ```excel``` file we use another module called ```openpyxl```
+
+### Reading From Excel File
+* To read data from some ```Excel File``` we use a function called ```load_workbook```
+```python
+import openpyxl
+
+workbook = openpyxl.load_workbook("path-of-excel-sheet")
+
+# to get a specific sheet out of workbook
+sheet1 = workbook.get_sheet_by_name("Sheet1")
+
+# if there is single sheet, we can just use
+sheet = workbook.active
+
+# to find the total no of rows
+row=sheet.max_row
+
+# to find the total no columns
+column=sheet.max_column
+
+# to read the data from excel value loaded in code
+for i in range(1,row+1):  # this loop works for each row,avoiding headers
+    for j in range(1,column+1):  # this loop works for each column
+        print(sheet.cell(row=i,column=j).value,end="   ")
+    print() # this print is used to print a new line character and move to next line
+```
+
+ ### Writing to Excel File
+ * To write inside a Excel file through python , use similar code
+ ```python
+ import openpyxl
+
+ workbook = openpyxl.load_workbook("path-of-excel-sheet")
+
+ sheet = workbook.get_sheet_by_name("Name of you sheet")
+
+ for i in range(1,row):
+    for j in range(1,column):
+        sheet.cell(row=i,column=j).value="whatever-you-want-to-type-in file"
+
+workbook.save("path-of-excel-file")
+```
+
