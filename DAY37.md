@@ -400,3 +400,15 @@ for i in range(1,row+1):  # this loop works for each row,avoiding headers
 workbook.save("path-of-excel-file")
 ```
 
+## Cookies
+* To get the present cookies of browser, we use ```driver.get_cookies()```
+* Cookies are present in ```Dictionary``` format
+* To delete all cookies use ```driver.delete_all_cookies()```
+* Adding cookies from a file is difficult for now as a file contains string and cookie should be dict 
+* for more then one cookie we use list of dictionaries with each dictionary element acting as a single cookie
+
+
+## Capture ScreenShot
+
+
+
