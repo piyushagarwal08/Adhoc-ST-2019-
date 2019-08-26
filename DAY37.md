@@ -409,6 +409,63 @@ workbook.save("path-of-excel-file")
 
 
 ## Capture ScreenShot
+* We can take ```ScreenShot``` of any page using the function ```driver.save_screenshot(path-of-file-to-save-as)```
+* We have another similar function for same purpose that is ```driver.get_screenshot_as_file(path-of-png-file-extension)```
 
 
+## Logging
+* It helps in discovering various possible scenarious that we might not be able to think of
+* Logging a way to store all the information about the flow of program
+* It specifies if the program ran perfectly or some problems or some kind of warning is faced
+* There are various kinds of logs such as :
+    1. Error log
+    2. Debug
+    3. Info
+    4. Warning 
+    5. Critical
+* Requires Module ```logging```
+* An example is 
+    ```python
+    import logging
 
+    logging.basicConfig(filename='path-of-file-to-save-logs', format= '% (asctime)s : % (levelname)s : % (message)s', level=logging.DEBUG)  # this saves the log messages to the specified log file data
+    # level is used to make sure low level logging messages are also stored in files
+    # asctime -> is used to define time
+    # levelname -> is used to define the log level , it could be Debug/Error/Info/Warning/Critical
+    # message -> what kind of message you wish to print 
+
+    logging.debug('This is Debug message')
+    logging.error('This is error message')
+    logging.info('Info message')
+    logging.critical('Critical message')
+    logging.warning('Warning Message')
+    ```
+* Log file is opened in ```append mode``` by default
+* the format of the ```timestamp``` can also be changed using the ```datefmt``` variable as ```datefmt='%d / %m / %Y  %I:%M:%S %p' ```
+* In above format
+    1. %d -> is for Date
+    2. %m -> is for Month
+    3. %Y -> is for Year
+    4. %I -> is for Hour
+    5. %M -> is for Minute
+    6. %S -> is for seconds
+    7. %p -> is for AM or PM
+* In real time work , instead of using the module ```logging``` directly, coders prefer to use a object of logging
+* An example as to how to do the work is
+    ```python
+    import logging
+
+    # this is to create a format of the log file 
+    logging.baseConfig(filename='path-of-file-to-save-logs-to', format= '% (asctime)s : % (levelname)s : % (message)s', datefmt='%d/%m/%Y %I:%M:%S %p')
+
+    logger = logging.getLogger()   # creates an instance of the logging with name logger , we can name it by our choice instead of logger
+    logger.setLevel(logging.DEBUG)  # unlike code above, this is an alternative format to set the log levels
+
+    logger.debug('This is Debug message')
+    logger.error('This is error message')
+    logger.info('Info message')
+    logger.critical('Critical message')
+    logger.warning('Warning Message')
+    ```
+
+##
