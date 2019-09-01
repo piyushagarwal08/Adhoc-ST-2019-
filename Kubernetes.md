@@ -67,3 +67,5 @@ func main() {
 * to run the above code use command ```go run file-name.go```
 
 ## Kubernetes
+* <u> Container Orchestration </u> all container related tasks whether they are running, dead, in proper state 
+* Orchestration is managing and scheduling each and every container for which we need to use kubernetes application engine
