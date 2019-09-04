@@ -69,3 +69,8 @@ func main() {
 ## Kubernetes
 * <u> Container Orchestration </u> all container related tasks whether they are running, dead, in proper state 
 * Orchestration is managing and scheduling each and every container for which we need to use kubernetes application engine
+
+* <b> Why we need container oriented platform? </b>
+* <b> Will it grow in terms of business or performance </b>
+* <b> Is it platform independent ? </b>
+
