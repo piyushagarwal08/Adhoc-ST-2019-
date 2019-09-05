@@ -46,6 +46,7 @@ code + platform ~> OS (will be obtained through Docker)
 ``` -v path-in-os:path-created-in-container```
 * <u> sh </u> name of the shell
 * maximum code of docker is written in golang
+* Containers require around 5 ~ 10 mb ram and about 0.0001% core CPU
 
 
 ## GO
@@ -67,5 +68,66 @@ func main() {
 * to run the above code use command ```go run file-name.go```
 
 ## Kubernetes
+<b> https://kubernetes.io </b>
 * <u> Container Orchestration </u> all container related tasks whether they are running, dead, in proper state 
 * Orchestration is managing and scheduling each and every container for which we need to use kubernetes application engine
+* While using kubernetes make sure docker is installed over all the machines
+* To create a cluster we run the command ``` kubeadm init```
+* To find the available nodes run the command ```kubectl get nodes```
+
+## Points to Note:
+* Why do we need Container Oriented Platform?
+* Business / Performance whats is its Scope
+* Is it Platform oriented
+
+## Possible Development Ideas
+* Run some code any language based
+* Host some Apps
+* Test your Software
+* Put your website live
+
+## Methods for launching Kubernetes
+1. Kaps ~> AWS
+2. MiniKube ~> Virtual Box
+3. Kubeadm ~> Open Source ~> Used to create mainframe Clusters
+
+## Master System
+* Has the authority to accept the requests of users and be able to deploy the actions as well
+
+* <u> deployment </u> it is a function which has the ability to store multiple containers that can be used all together
+
+## Podman
+Podman is a daemonless container engine for developing, managing, and running OCI Containers on your Linux System.
+
+## Setting Up Kubernetes over AWS
+* Start a 4gb ram instance with 20 GB storage
+* Install docker running command ``` yum install docker -y```
+* start the service
+* Create a new Repo by running the following commands
+    ```sh
+    $cat <<EOF > /etc/yum.repos.d/kubernetes.repo
+    [kubernetes]
+    name=Kubernetes
+    baseurl=https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64
+    enabled=1
+    gpgcheck=0
+    ```
+* run the following command to install the kubernetes
+    ```sh
+    yum install kubeadm kubectl docker -y
+    ```
+* Run
+    ```sh
+    cat <<EOF> /etc/sysctl.d/k8s.conf
+    net.bridge.bridge-nf-call-ip6tables = 1
+    net.bridge.bridge-nf-call-iptables = 1
+    EOF
+    ```
+* Run
+    ```shell
+    sysctl --system
+    ```
+* Run 
+    ```shell
+    modprobe br_netfilter
+    ```
