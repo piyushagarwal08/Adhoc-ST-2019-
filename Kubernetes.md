@@ -71,6 +71,7 @@ func main() {
 <b> https://kubernetes.io </b>
 * <u> Container Orchestration </u> all container related tasks whether they are running, dead, in proper state 
 * Orchestration is managing and scheduling each and every container for which we need to use kubernetes application engine
+<<<<<<< HEAD
 * While using kubernetes make sure docker is installed over all the machines
 * To create a cluster we run the command ``` kubeadm init```
 * To find the available nodes run the command ```kubectl get nodes```
@@ -131,3 +132,10 @@ Podman is a daemonless container engine for developing, managing, and running OC
     ```shell
     modprobe br_netfilter
     ```
+=======
+
+* <b> Why we need container oriented platform? </b>
+* <b> Will it grow in terms of business or performance </b>
+* <b> Is it platform independent ? </b>
+
+>>>>>>> 1afa1761a3858009fc3d4f9432dce4a80d82dcf7
