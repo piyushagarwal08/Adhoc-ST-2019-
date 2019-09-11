@@ -122,14 +122,14 @@ chmod +t /project
 chmod g+s /project
 ```
 ## Types of Files in LINUX
-  There are 7 types of files in LINUX OS - :
-    1. Regular files (-)
-    2. Directory files (d)
-    3. Block files (b)
-    4. Character device files (c)
-    5. Named pipe file or just a pipe file (p)
-    6. Symbolic link file (l)
-    7. Socket file (s)
+There are 7 types of files in LINUX OS - :
+  1. Regular files (-)
+  2. Directory files (d)
+  3. Block files (b)
+  4. Character device files (c)
+  5. Named pipe file or just a pipe file (p)
+  6. Symbolic link file (l)
+  7. Socket file (s)
 
 ## Installation and Setup of Jupyter
 *   Instance Launch
