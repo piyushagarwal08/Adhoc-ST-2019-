@@ -75,7 +75,7 @@
       * read variable-name               #read used to take input and store in variable
       * echo "string"/$ variable-name    # used to print something on terminal
       * $ (( command )) or  c = $(expr $a + $b) and use \* for multiplication
-      * if [ condition ] folled then and by fi
+      * if [ condition ] followed then and by fi
   5. Operators ~ :
     * -eq - > equal
     * -ne - > not equal
